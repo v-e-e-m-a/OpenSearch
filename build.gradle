@@ -736,3 +736,12 @@ tasks.named(JavaBasePlugin.CHECK_TASK_NAME) {
   dependsOn tasks.named('testAggregateTestReport', TestReport)
 }
 
+allprojects {
+  configurations.all {
+    resolutionStrategy {
+      force 'org.eclipse.jetty:jetty-http:12.1.7'
+      force 'org.eclipse.jetty:jetty-security:9.4.63'
+    }
+  }
+}
+
